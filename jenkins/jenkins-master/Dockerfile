@@ -15,6 +15,7 @@ ENV CA_CERTIFICATES_JAVA_VERSION 20140324
 
 RUN yum -v install -y \
     wget \
+    which \
     zip \
     openssh-client \
     unzip \
@@ -24,6 +25,7 @@ RUN yum -v install -y \
     && yum clean all
 
 #RUN /var/lib/dpkg/info/ca-certificates-java.postinst configure
+ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el7_5.x86_64
 
 # Install Tini
 ENV TINI_VERSION 0.9.0
